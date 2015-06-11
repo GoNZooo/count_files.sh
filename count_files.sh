@@ -7,4 +7,4 @@ if [[ -z "$SEARCH_ROOT" ]]; then
     SEARCH_ROOT="."
 fi
 
-find "$SEARCH_ROOT" -iname "*$SEARCH_TERM*" | gawk -e 'BEGIN { total_files = 0; } // { total_files++; } END { print total_files; }'
+find "$SEARCH_ROOT" -type f -iname "*$SEARCH_TERM*" | gawk -e 'BEGIN { total_files = 0; } // { total_files++; } END { print total_files; }'
